@@ -4,6 +4,7 @@ import Header from './Header/Header';
 import Main from './Main/Main';
 import Skills from './Skills/Skills';
 import Works from './Works/Works';
+import Slogan from './Slogan/Slogan';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Main/>
       <Skills/>
       <Works/>
+      <Slogan/>
     </div>
   );
 }
