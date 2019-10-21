@@ -9,10 +9,13 @@
   width: 80%;
   border: 1px solid;
   display:flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .greet{
-
+  display: flex;
+  flex-direction: column;
 }
 
 .photo{
