@@ -1,5 +1,11 @@
-.Main {
+.main {
   height:100vh;
   background-color: royalblue;
+  display: flex;
+  justify-content: center;
 }
 
+.container{
+  width: 80%;
+  border: 1px solid;
+}
