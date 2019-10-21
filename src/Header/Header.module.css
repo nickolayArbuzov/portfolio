@@ -1,5 +1,9 @@
 .Header {
-  height:50px;
+  height:70px;
   background-color: cadetblue;
+}
+
+.wrapper{
+  border: 1px solid;
 }
 
