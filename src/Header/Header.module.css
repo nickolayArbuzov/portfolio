@@ -1,9 +1,15 @@
 .Header {
   height:70px;
   background-color: cadetblue;
+  display: flex;
+  justify-content: center;
 }
 
-.wrapper{
+.container{
   border: 1px solid;
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
