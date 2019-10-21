@@ -3,8 +3,10 @@ import styles from './Slogan.module.css';
 
 function Slogan() {
   return (
-    <div className={styles.Slogan}>
-      5
+    <div className={styles.slogan}>
+      <div className={styles.container}>
+      
+      </div>
     </div>
   );
 }

@@ -1,5 +1,12 @@
-.Contacts {
+.contacts {
   height:50px;
   background-color: goldenrod;
+  display: flex;
+  justify-content: center;
 }
 
+.container{
+  width: 80%;
+  border: 1px solid;
+  display:flex;
+}

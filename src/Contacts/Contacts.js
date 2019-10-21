@@ -3,8 +3,10 @@ import styles from './Contacts.module.css';
 
 function Contacts() {
   return (
-    <div className={styles.Contacts}>
-      6
+    <div className={styles.contacts}>
+      <div className={styles.container}>
+      
+      </div>
     </div>
   );
 }

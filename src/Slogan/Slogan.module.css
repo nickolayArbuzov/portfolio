@@ -1,5 +1,12 @@
-.Slogan {
+.slogan {
   height:33vh;
   background-color: lightcoral;
+  display: flex;
+  justify-content: center;
 }
 
+.container{
+  width: 80%;
+  border: 1px solid;
+  display:flex;
+}

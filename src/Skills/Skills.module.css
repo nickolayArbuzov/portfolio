@@ -1,5 +1,12 @@
-.Skills {
+.skills {
   height:100vh;
   background-color: darkslategray;
+  display: flex;
+  justify-content: center;
 }
 
+.container{
+  width: 80%;
+  border: 1px solid;
+  display:flex;
+}

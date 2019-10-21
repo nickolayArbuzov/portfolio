@@ -1,5 +1,12 @@
-.Footer {
+.footer {
   height:50px;
   background-color: silver;
+  display: flex;
+  justify-content: center;
 }
 
+.container{
+  width: 80%;
+  border: 1px solid;
+  display:flex;
+}
