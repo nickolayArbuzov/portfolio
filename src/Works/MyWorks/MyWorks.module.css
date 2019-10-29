@@ -1,0 +1,12 @@
+.works {
+  height:100vh;
+  background-color: lightslategrey;
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  width: 80%;
+  border: 1px solid;
+  display:flex;
+}

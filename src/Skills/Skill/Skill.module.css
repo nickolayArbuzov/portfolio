@@ -1,0 +1,8 @@
+.skill {
+  height:300px;
+  width:300px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}

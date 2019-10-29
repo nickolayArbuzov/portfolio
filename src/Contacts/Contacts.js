@@ -5,7 +5,7 @@ function Contacts() {
   return (
     <div className={styles.contacts}>
       <div className={styles.container}>
-      
+        <span>Контакты</span>
       </div>
     </div>
   );
