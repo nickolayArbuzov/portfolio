@@ -21,7 +21,7 @@ findEl('Игровое поле').addEventListener('mousedown', (e)=>{
     let y = e.clientY;
     let frameField = new Block('Рамка',0,0,'RGBA(0,0,0,0.1)',y,x);
     frameField.render();
-
+    findEl('Рамка').addEventListener('mousemove', (e)=>{changeFrame(e,x,y)})
     findEl('Игровое поле').addEventListener('mousemove', (e)=>{changeFrame(e,x,y)})
 })
 
