@@ -6,10 +6,15 @@ import lightStar from './Assets/Img/lightStar.png';
 function App() {
   return (
     <div className={s.App}>
+      <AppTitle />
       <Rating />
       <Accordeon />
     </div>
   );
+}
+
+function AppTitle(){
+  return <>App</>
 }
 
 function Rating() {
@@ -27,12 +32,8 @@ function Rating() {
 function Accordeon() {
   return (
     <div>
-      <h3>menu</h3>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
+      <AccordeonTitle />
+      <AccordeonBody />
     </div>
   )
 }
@@ -41,6 +42,27 @@ function Star() {
   return (
     <div>
       <img className={s.star} src={lightStar}/>
+      <img className={s.star} src={blackStar}/>
+    </div>
+  )
+}
+
+function AccordeonTitle() {
+  return (
+    <div>
+      <h3>menu</h3>
+    </div>
+  )
+}
+
+function AccordeonBody() {
+  return (
+    <div>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
     </div>
   )
 }
