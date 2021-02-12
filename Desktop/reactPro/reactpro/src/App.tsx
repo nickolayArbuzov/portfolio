@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import s from './App.module.css';
+import blackStar from './Assets/Img/blackStar.png';
+import lightStar from './Assets/Img/lightStar.png';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={s.App}>
+      <Rating />
+      <Accordeon />
     </div>
   );
+}
+
+function Rating() {
+  return (
+    <div>
+      <Star />
+      <Star />
+      <Star />
+      <Star />
+      <Star />
+    </div>
+  )
+}
+
+function Accordeon() {
+  return (
+    <div>
+      <h3>menu</h3>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+  )
+}
+
+function Star() {
+  return (
+    <div>
+      <img className={s.star} src={lightStar}/>
+    </div>
+  )
 }
 
 export default App;
