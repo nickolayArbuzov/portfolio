@@ -3,7 +3,11 @@ import blackStar from '../../Assets/Img/blackStar.png';
 import lightStar from '../../Assets/Img/lightStar.png';
 import s from './Rating.module.css';
 
-function Rating(props: any) {
+type RatingPropsType = {
+  value: 0 | 1 | 2 | 3 | 4 | 5
+}
+
+function Rating(props: RatingPropsType) {
   return (
     <div>
       <Star selected={props.value > 0} />
@@ -15,7 +19,11 @@ function Rating(props: any) {
   )
 }
 
-function Star(props: any) {
+type StarPropsType = {
+  selected: boolean
+}
+
+function Star(props: StarPropsType) {
   return (
     <span>
       <img className={s.star} src={(props.selected && lightStar) || blackStar}/>

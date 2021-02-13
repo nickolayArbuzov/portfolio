@@ -7,10 +7,10 @@ function App() {
   return (
     <div className={s.App}>
       <AppTitle />
-      <Rating value={4}/>
-      <Accordeon title={'my toDos'}/>
+      <Rating value={0}/>
+      <Accordeon title={'my toDos'} collapsed={true}/>
       <Rating value={3}/>
-      <Accordeon title={'my purchases'}/>
+      <Accordeon title={'my purchases'} collapsed={true}/>
     </div>
   );
 }

@@ -1,15 +1,24 @@
 import React from 'react';
 
-function Accordeon(props: any) {
+type AccordeonPropsType = {
+  title: string,
+  collapsed: boolean
+}
+
+function Accordeon(props: AccordeonPropsType) {
   return (
     <div>
       <AccordeonTitle title={props.title}/>
-      <AccordeonBody />
+      {!props.collapsed && <AccordeonBody />}
     </div>
   )
 }
 
-function AccordeonTitle(props: any) {
+type AccordeonTitlePropsType = {
+  title: string
+}
+
+function AccordeonTitle(props: AccordeonTitlePropsType) {
   debugger
   return (
     <div>
