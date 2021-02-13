@@ -19,7 +19,6 @@ type AccordeonTitlePropsType = {
 }
 
 function AccordeonTitle(props: AccordeonTitlePropsType) {
-  debugger
   return (
     <div>
       <h3>{props.title}</h3>

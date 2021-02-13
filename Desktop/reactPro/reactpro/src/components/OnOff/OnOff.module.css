@@ -1,0 +1,14 @@
+.rect {
+  border: solid 1px black;
+  
+}
+.circle {
+  border: solid 1px black;
+  border-radius: 50%;
+}
+.on {
+  background-color: green;
+}
+.off {
+  background-color: red;
+}
