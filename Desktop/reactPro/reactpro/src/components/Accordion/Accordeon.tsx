@@ -8,22 +8,27 @@ function UncontrolledAccordeon(props: UncontrolledAccordeonPropsType) {
 
   let [collapsed, setCollapsed] = useState(false);
 
+  const onSetCollapsed = () => {
+    setCollapsed(!collapsed);
+  }
+
   return (
     <div>
-      <UncontrolledAccordeonTitle title={props.title}/> <button onClick={() => {setCollapsed(!collapsed)}}>TOGGLE</button>
+      <UncontrolledAccordeonTitle onSetCollapsed={onSetCollapsed} title={props.title}/> 
       {collapsed && <UncontrolledAccordeonBody />}
     </div>
   )
 }
 
 type UncontrolledAccordeonTitlePropsType = {
-  title: string
+  title: string,
+  onSetCollapsed: () => void
 }
 
 function UncontrolledAccordeonTitle(props: UncontrolledAccordeonTitlePropsType) {
   return (
     <div>
-      <h3>{props.title}</h3>
+      <h3 onClick={props.onSetCollapsed}>{props.title}</h3>
     </div>
   )
 }

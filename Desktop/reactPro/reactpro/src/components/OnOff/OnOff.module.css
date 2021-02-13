@@ -9,6 +9,12 @@
 .on {
   background-color: green;
 }
+.on :hover {
+  background-color: greenyellow;
+}
 .off {
   background-color: red;
+}
+.off :hover {
+  background-color: rosybrown;
 }
