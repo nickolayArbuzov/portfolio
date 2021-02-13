@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-type AccordeonPropsType = {
+type UncontrolledAccordeonPropsType = {
   title: string,
-  collapsed: boolean
 }
 
-function Accordeon(props: AccordeonPropsType) {
+function UncontrolledAccordeon(props: UncontrolledAccordeonPropsType) {
+
+  let [collapsed, setCollapsed] = useState(false);
+
   return (
     <div>
-      <AccordeonTitle title={props.title}/>
-      {!props.collapsed && <AccordeonBody />}
+      <UncontrolledAccordeonTitle title={props.title}/> <button onClick={() => {setCollapsed(!collapsed)}}>TOGGLE</button>
+      {collapsed && <UncontrolledAccordeonBody />}
     </div>
   )
 }
 
-type AccordeonTitlePropsType = {
+type UncontrolledAccordeonTitlePropsType = {
   title: string
 }
 
-function AccordeonTitle(props: AccordeonTitlePropsType) {
+function UncontrolledAccordeonTitle(props: UncontrolledAccordeonTitlePropsType) {
   return (
     <div>
       <h3>{props.title}</h3>
@@ -26,7 +28,7 @@ function AccordeonTitle(props: AccordeonTitlePropsType) {
   )
 }
 
-function AccordeonBody() {
+function UncontrolledAccordeonBody() {
   return (
     <div>
       <ul>
@@ -38,4 +40,4 @@ function AccordeonBody() {
   )
 }
 
-export default Accordeon;
+export default UncontrolledAccordeon;
