@@ -1,39 +1,36 @@
 import React, { useState } from 'react';
 
-type UncontrolledAccordeonPropsType = {
+type AccordeonPropsType = {
   title: string,
+  onClick: (collapsed: boolean) => void
+  collapsed: boolean
 }
 
-function UncontrolledAccordeon(props: UncontrolledAccordeonPropsType) {
-
-  let [collapsed, setCollapsed] = useState(false);
-
-  const onSetCollapsed = () => {
-    setCollapsed(!collapsed);
-  }
+function Accordeon(props: AccordeonPropsType) {
 
   return (
     <div>
-      <UncontrolledAccordeonTitle onSetCollapsed={onSetCollapsed} title={props.title}/> 
-      {collapsed && <UncontrolledAccordeonBody />}
+      <AccordeonTitle onClick={props.onClick} title={props.title} collapsed={props.collapsed}/> 
+      {props.collapsed && <AccordeonBody />}
     </div>
   )
 }
 
-type UncontrolledAccordeonTitlePropsType = {
+type AccordeonTitlePropsType = {
   title: string,
-  onSetCollapsed: () => void
+  onClick: (collapsed: boolean) => void,
+  collapsed: boolean
 }
 
-function UncontrolledAccordeonTitle(props: UncontrolledAccordeonTitlePropsType) {
+function AccordeonTitle(props: AccordeonTitlePropsType) {
   return (
     <div>
-      <h3 onClick={props.onSetCollapsed}>{props.title}</h3>
+      <h3 onClick={() => {props.onClick(!props.collapsed)}}>{props.title}</h3>
     </div>
   )
 }
 
-function UncontrolledAccordeonBody() {
+function AccordeonBody() {
   return (
     <div>
       <ul>
@@ -45,4 +42,4 @@ function UncontrolledAccordeonBody() {
   )
 }
 
-export default UncontrolledAccordeon;
+export default Accordeon;

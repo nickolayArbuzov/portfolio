@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function OnOff() {
+function UncontrolledOnOff() {
 
   let [toggle, setToggle] = useState(false)
 
@@ -44,4 +44,4 @@ function OnOff() {
   )
 }
 
-export default OnOff;
+export default UncontrolledOnOff;

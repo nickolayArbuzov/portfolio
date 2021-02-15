@@ -3,43 +3,54 @@ import blackStar from '../../Assets/Img/blackStar.png';
 import lightStar from '../../Assets/Img/lightStar.png';
 import s from './Rating.module.css';
 
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+
 type RatingPropsType = {
-  value: 0 | 1 | 2 | 3 | 4 | 5
+  fixValue: RatingValueType,
+  ratingValue: RatingValueType,
+  onClick: (value: RatingValueType) => void,
+  onMouseEnter: (value: RatingValueType) => void,
+  onMouseLeave: (value: RatingValueType) => void
 }
 
-function UncontrolledRating() {
-  let [value, setValue] = useState(0);
-  let [fixValue, setFixValue] = useState(0);
+function Rating(props: RatingPropsType) {
   
   return (
     <div>
-      <Star selected={value > 0} value={1} fixValue={fixValue} setValue={setValue} setFixValue={setFixValue}/>
-      <Star selected={value > 1} value={2} fixValue={fixValue} setValue={setValue} setFixValue={setFixValue}/>
-      <Star selected={value > 2} value={3} fixValue={fixValue} setValue={setValue} setFixValue={setFixValue}/>
-      <Star selected={value > 3} value={4} fixValue={fixValue} setValue={setValue} setFixValue={setFixValue}/>
-      <Star selected={value > 4} value={5} fixValue={fixValue} setValue={setValue} setFixValue={setFixValue}/>
+      <Star selected={props.ratingValue > 0} value={1} fixValue={props.fixValue} ratingValue={props.ratingValue}
+            onClick={props.onClick} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}/>
+      <Star selected={props.ratingValue > 1} value={2} fixValue={props.fixValue} ratingValue={props.ratingValue}
+            onClick={props.onClick} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}/>
+      <Star selected={props.ratingValue > 2} value={3} fixValue={props.fixValue} ratingValue={props.ratingValue}
+            onClick={props.onClick} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}/>
+      <Star selected={props.ratingValue > 3} value={4} fixValue={props.fixValue} ratingValue={props.ratingValue}
+            onClick={props.onClick} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}/>
+      <Star selected={props.ratingValue > 4} value={5} fixValue={props.fixValue} ratingValue={props.ratingValue}
+            onClick={props.onClick} onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}/>
     </div>
   )
 }
 
 type StarPropsType = {
   selected: boolean,
-  setValue: (value: number) => void,
-  setFixValue: (value: 1 | 2 | 3 | 4 | 5) => void,
-  value: 1 | 2 | 3 | 4 | 5,
-  fixValue: number
+  onClick: (value: RatingValueType) => void,
+  onMouseEnter: (value: RatingValueType) => void,
+  onMouseLeave: (value: RatingValueType) => void,
+  value: RatingValueType,
+  fixValue: RatingValueType,
+  ratingValue: RatingValueType
 }
 
 function Star(props: StarPropsType) {
   return (
     <span 
-      onClick={() => {props.setFixValue(props.value)}}
-      onMouseEnter={() => {props.setValue(props.value)}}
-      onMouseLeave={() => {props.setValue(props.fixValue)}}
+      onClick={() => {props.onClick(props.value)}}
+      onMouseEnter={() => {props.onMouseEnter(props.value)}}
+      onMouseLeave={() => {props.onMouseLeave(props.fixValue)}}
       >
       <img className={s.star} src={(props.selected && lightStar) || blackStar}/>
     </span>
   )
 }
 
-export default UncontrolledRating;
+export default Rating;
