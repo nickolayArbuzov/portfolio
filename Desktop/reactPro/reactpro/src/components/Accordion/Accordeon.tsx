@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import s from './Accordeon.module.css';
 
 type AccordeonPropsType = {
   title: string,
@@ -23,9 +24,14 @@ type AccordeonTitlePropsType = {
 }
 
 function AccordeonTitle(props: AccordeonTitlePropsType) {
+  
+  const onCollapsed = () => {
+    props.onClick(!props.collapsed);
+  }
+
   return (
     <div>
-      <h3 onClick={() => {props.onClick(!props.collapsed)}}>{props.title}</h3>
+      <h3 className={s.title} onClick={onCollapsed}>{props.title}</h3>
     </div>
   )
 }

@@ -31,11 +31,20 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
+  const onChooseRating = () => {
+    props.setFixValue(props.value)
+  }
+  const onHoveredRating = () => {
+    props.setValue(props.value)
+  }
+  const onDishoveredRating = () => {
+    props.setValue(props.fixValue)
+  }
   return (
     <span 
-      onClick={() => {props.setFixValue(props.value)}}
-      onMouseEnter={() => {props.setValue(props.value)}}
-      onMouseLeave={() => {props.setValue(props.fixValue)}}
+      onClick={onChooseRating}
+      onMouseEnter={onHoveredRating}
+      onMouseLeave={onDishoveredRating}
       >
       <img className={s.star} src={(props.selected && lightStar) || blackStar}/>
     </span>

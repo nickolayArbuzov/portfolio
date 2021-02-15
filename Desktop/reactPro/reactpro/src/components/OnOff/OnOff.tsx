@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import s from './OnOff.module.css'
 
 type onOffPropsType = {
   onClick: (toggle: boolean) => void,
@@ -14,7 +14,9 @@ function OnOff(props: onOffPropsType) {
     border: '1px solid black',
     display: 'inline-block',
     padding: '2px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    transitionProperty: 'background-color',
+    transitionDuration: '.5s'
   }
 
   const offStyle = {
@@ -25,7 +27,9 @@ function OnOff(props: onOffPropsType) {
     display: 'inline-block',
     marginLeft: '2px',
     padding: '2px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    transitionProperty: 'background-color',
+    transitionDuration: '.5s'
   }
 
   const indicatorStyle = {
@@ -38,10 +42,17 @@ function OnOff(props: onOffPropsType) {
     marginLeft: '5px'
   }
 
+  const onClicked = () => {
+    props.onClick(true);
+  }
+  const offClicked = () => {
+    props.onClick(false)
+  }
+
   return (
     <div>
-      <div style={onStyle} onClick={() => {props.onClick(true)}}>On</div>
-      <div style={offStyle} onClick={() => {props.onClick(false)}}>Off</div>
+      <div className={s.on} style={onStyle} onClick={onClicked}>On</div>
+      <div className={s.off} style={offStyle} onClick={offClicked}>Off</div>
       <div style={indicatorStyle}></div>
     </div>
   )

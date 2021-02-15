@@ -1,20 +1,7 @@
-.rect {
-  border: solid 1px black;
+.on:hover {
+  background-color: greenyellow;
   
 }
-.circle {
-  border: solid 1px black;
-  border-radius: 50%;
-}
-.on {
-  background-color: green;
-}
-.on :hover {
-  background-color: greenyellow;
-}
-.off {
-  background-color: red;
-}
-.off :hover {
-  background-color: rosybrown;
+.off:hover {
+  background-color: lightcoral;
 }

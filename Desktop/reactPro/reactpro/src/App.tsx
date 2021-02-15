@@ -15,13 +15,15 @@ function App() {
   let [collapsed, setCollapsed] = useState(false);
 
   let [toggle, setToggle] = useState(false)
+  let [unControlledtoggle, setUncontrolledToggle] = useState(false)
 
   return (
     <div className={s.App}>
       <AppTitle title={'Uncontrolled:'}/>
       <UncontrolledRating />
       <UncontrolledAccordeon title={'my toDos'} />
-      <UncontrolledOnOff />
+      <UncontrolledOnOff onChange={setUncontrolledToggle}/> {unControlledtoggle.toString()}
+      <br></br>
       <AppTitle title={'Controlled:'}/>
       <Rating fixValue={fixValue} 
               ratingValue={ratingValue}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import s from './Accordeon.module.css';
 
 type UncontrolledAccordeonPropsType = {
   title: string,
@@ -28,7 +29,7 @@ type UncontrolledAccordeonTitlePropsType = {
 function UncontrolledAccordeonTitle(props: UncontrolledAccordeonTitlePropsType) {
   return (
     <div>
-      <h3 onClick={props.onSetCollapsed}>{props.title}</h3>
+      <h3 className={s.title} onClick={props.onSetCollapsed}>{props.title}</h3>
     </div>
   )
 }

@@ -1,6 +1,11 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
+import s from './OnOff.module.css'
 
-function UncontrolledOnOff() {
+type onOffPropsType = {
+  onChange: (setUncontrolledToggle: boolean) => void
+}
+
+function UncontrolledOnOff(props: onOffPropsType) {
 
   let [toggle, setToggle] = useState(false)
 
@@ -11,7 +16,9 @@ function UncontrolledOnOff() {
     border: '1px solid black',
     display: 'inline-block',
     padding: '2px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    transitionProperty: 'background-color',
+    transitionDuration: '.5s'
   }
 
   const offStyle = {
@@ -22,7 +29,9 @@ function UncontrolledOnOff() {
     display: 'inline-block',
     marginLeft: '2px',
     padding: '2px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    transitionProperty: 'background-color',
+    transitionDuration: '.5s'
   }
 
   const indicatorStyle = {
@@ -35,10 +44,19 @@ function UncontrolledOnOff() {
     marginLeft: '5px'
   }
 
+  const onClicked = () => {
+    setToggle(true);
+    props.onChange(true);
+  }
+  const offClicked = () => {
+    setToggle(false);
+    props.onChange(false);
+  }
+
   return (
     <div>
-      <div style={onStyle} onClick={() => {setToggle(true)}}>On</div>
-      <div style={offStyle} onClick={() => {setToggle(false)}}>Off</div>
+      <div className={s.on} style={onStyle} onClick={onClicked}>On</div>
+      <div className={s.off} style={offStyle} onClick={offClicked}>Off</div>
       <div style={indicatorStyle}></div>
     </div>
   )
