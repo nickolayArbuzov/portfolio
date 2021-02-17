@@ -13,7 +13,7 @@ type RatingPropsType = {
   onMouseLeave: (value: RatingValueType) => void
 }
 
-function Rating(props: RatingPropsType) {
+export function Rating(props: RatingPropsType) {
   
   return (
     <div>
@@ -52,5 +52,3 @@ function Star(props: StarPropsType) {
     </span>
   )
 }
-
-export default Rating;

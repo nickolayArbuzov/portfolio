@@ -3,9 +3,9 @@ import s from './App.module.css';
 import UncontrolledRating from './components/Rating/UncontrolledRating';
 import UncontrolledAccordeon from './components/Accordion/UncontrolledAccordeon';
 import UncontrolledOnOff from './components/OnOff/UncontrolledOnOff';
-import Rating, { RatingValueType } from './components/Rating/Rating';
-import Accordeon from './components/Accordion/Accordeon';
-import OnOff from './components/OnOff/OnOff';
+import { Rating, RatingValueType } from './components/Rating/Rating';
+import { Accordeon } from './components/Accordion/Accordeon';
+import { OnOff } from './components/OnOff/OnOff';
 
 function App() {
 

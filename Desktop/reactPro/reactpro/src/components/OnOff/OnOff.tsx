@@ -5,7 +5,7 @@ type onOffPropsType = {
   toggle: boolean
 }
 
-function OnOff(props: onOffPropsType) {
+export function OnOff(props: onOffPropsType) {
 
   const onStyle = {
     width: '50px',
@@ -57,5 +57,3 @@ function OnOff(props: onOffPropsType) {
     </div>
   )
 }
-
-export default OnOff;

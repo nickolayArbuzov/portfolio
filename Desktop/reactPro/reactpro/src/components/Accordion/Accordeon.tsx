@@ -7,7 +7,7 @@ type AccordeonPropsType = {
   collapsed: boolean
 }
 
-function Accordeon(props: AccordeonPropsType) {
+export function Accordeon(props: AccordeonPropsType) {
 
   return (
     <div>
@@ -47,5 +47,3 @@ function AccordeonBody() {
     </div>
   )
 }
-
-export default Accordeon;
