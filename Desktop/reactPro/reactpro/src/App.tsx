@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import s from './App.module.css';
-import UncontrolledRating from './components/Rating/UncontrolledRating';
-import UncontrolledAccordeon from './components/Accordion/UncontrolledAccordeon';
-import UncontrolledOnOff from './components/OnOff/UncontrolledOnOff';
+import { UncontrolledRating } from './components/Rating/UncontrolledRating';
+import { UncontrolledAccordeon } from './components/Accordion/UncontrolledAccordeon';
+import { UncontrolledOnOff } from './components/OnOff/UncontrolledOnOff';
 import { Rating, RatingValueType } from './components/Rating/Rating';
 import { Accordeon } from './components/Accordion/Accordeon';
 import { OnOff } from './components/OnOff/OnOff';
@@ -22,7 +22,7 @@ function App() {
       <AppTitle title={'Uncontrolled:'}/>
       <UncontrolledRating />
       <UncontrolledAccordeon title={'my toDos'} />
-      <UncontrolledOnOff onChange={setUncontrolledToggle}/> {unControlledtoggle.toString()}
+      <UncontrolledOnOff onChange={setUncontrolledToggle} title={unControlledtoggle.toString()} /> 
       <br></br>
       <AppTitle title={'Controlled:'}/>
       <Rating fixValue={fixValue} 

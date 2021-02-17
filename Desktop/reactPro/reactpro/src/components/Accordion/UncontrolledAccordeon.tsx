@@ -5,7 +5,7 @@ type UncontrolledAccordeonPropsType = {
   title: string,
 }
 
-function UncontrolledAccordeon(props: UncontrolledAccordeonPropsType) {
+export function UncontrolledAccordeon(props: UncontrolledAccordeonPropsType) {
 
   let [collapsed, setCollapsed] = useState(false);
 
@@ -45,5 +45,3 @@ function UncontrolledAccordeonBody() {
     </div>
   )
 }
-
-export default UncontrolledAccordeon;

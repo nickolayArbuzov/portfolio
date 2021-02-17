@@ -3,13 +3,16 @@ import blackStar from '../../Assets/Img/blackStar.png';
 import lightStar from '../../Assets/Img/lightStar.png';
 import s from './Rating.module.css';
 
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
+
 type RatingPropsType = {
-  value: 0 | 1 | 2 | 3 | 4 | 5
+  value?: RatingValueType,
+  defaultValue?: RatingValueType
 }
 
-function UncontrolledRating() {
-  let [value, setValue] = useState(0);
-  let [fixValue, setFixValue] = useState(0);
+export function UncontrolledRating(props: RatingPropsType) {
+  let [value, setValue] = useState<RatingValueType>(props.defaultValue || 0);
+  let [fixValue, setFixValue] = useState<RatingValueType>(props.defaultValue || 0);
   
   return (
     <div>
@@ -24,10 +27,10 @@ function UncontrolledRating() {
 
 type StarPropsType = {
   selected: boolean,
-  setValue: (value: number) => void,
-  setFixValue: (value: 1 | 2 | 3 | 4 | 5) => void,
-  value: 1 | 2 | 3 | 4 | 5,
-  fixValue: number
+  setValue: (value: RatingValueType) => void,
+  setFixValue: (value: RatingValueType) => void,
+  value: RatingValueType,
+  fixValue: RatingValueType
 }
 
 function Star(props: StarPropsType) {
@@ -50,5 +53,3 @@ function Star(props: StarPropsType) {
     </span>
   )
 }
-
-export default UncontrolledRating;

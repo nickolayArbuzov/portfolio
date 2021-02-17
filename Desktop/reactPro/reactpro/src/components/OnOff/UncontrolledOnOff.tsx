@@ -2,12 +2,14 @@ import {useState} from 'react';
 import s from './OnOff.module.css'
 
 type onOffPropsType = {
-  onChange: (setUncontrolledToggle: boolean) => void
+  onChange: (setUncontrolledToggle: boolean) => void,
+  title: string,
+  defaultValue?: boolean
 }
 
-function UncontrolledOnOff(props: onOffPropsType) {
+export function UncontrolledOnOff(props: onOffPropsType) {
 
-  let [toggle, setToggle] = useState(false)
+  let [toggle, setToggle] = useState(props.defaultValue || false)
 
   const onStyle = {
     width: '50px',
@@ -58,8 +60,7 @@ function UncontrolledOnOff(props: onOffPropsType) {
       <div className={s.on} style={onStyle} onClick={onClicked}>On</div>
       <div className={s.off} style={offStyle} onClick={offClicked}>Off</div>
       <div style={indicatorStyle}></div>
+      <div>{props.title}</div>
     </div>
   )
 }
-
-export default UncontrolledOnOff;
