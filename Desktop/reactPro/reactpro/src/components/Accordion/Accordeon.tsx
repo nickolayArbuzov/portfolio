@@ -1,10 +1,17 @@
 import React from 'react';
 import s from './Accordeon.module.css';
 
+type ItemType = {
+  title: string,
+  value: any
+}
+
 type AccordeonPropsType = {
   title: string,
-  onClick: (collapsed: boolean) => void
-  collapsed: boolean
+  onClick: (collapsed: boolean) => void,
+  collapsed: boolean,
+  items: ItemType[],
+  onItemClick: (value: any) => void
 }
 
 export function Accordeon(props: AccordeonPropsType) {
@@ -12,7 +19,7 @@ export function Accordeon(props: AccordeonPropsType) {
   return (
     <div>
       <AccordeonTitle onClick={props.onClick} title={props.title} collapsed={props.collapsed}/> 
-      {props.collapsed && <AccordeonBody />}
+      {props.collapsed && <AccordeonBody items={props.items} onItemClick={props.onItemClick}/>}
     </div>
   )
 }
@@ -36,13 +43,16 @@ function AccordeonTitle(props: AccordeonTitlePropsType) {
   )
 }
 
-function AccordeonBody() {
+type AccordeonBodyPropsType = {
+  items: ItemType[],
+  onItemClick: (value: any) => void
+}
+
+function AccordeonBody(props: AccordeonBodyPropsType) {
   return (
     <div>
       <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        {props.items.map((i,index) => <li onClick={() => {props.onItemClick(i.value)}} key={index}>{i.title}</li>)}
       </ul>
     </div>
   )
