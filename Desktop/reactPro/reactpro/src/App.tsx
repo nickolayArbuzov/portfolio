@@ -6,6 +6,7 @@ import { UncontrolledOnOff } from './components/OnOff/UncontrolledOnOff';
 import { Rating, RatingValueType } from './components/Rating/Rating';
 import { Accordeon } from './components/Accordion/Accordeon';
 import { OnOff } from './components/OnOff/OnOff';
+import { RubicksCube } from './components/RubicksCube/RubicksCube';
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
 
   return (
     <div className={s.App}>
-      <AppTitle title={'Uncontrolled:'}/>
+      <RubicksCube />
+      {/*<AppTitle title={'Uncontrolled:'}/>
       <UncontrolledRating />
       <UncontrolledAccordeon title={'my toDos'} />
       <UncontrolledOnOff onChange={setUncontrolledToggle} title={unControlledtoggle.toString()} /> 
@@ -31,7 +33,7 @@ function App() {
               onMouseEnter={setRatingValue} 
               onMouseLeave={setRatingValue}/>
       <Accordeon title={'my purchases'} onClick={setCollapsed} collapsed={collapsed}/>
-      <OnOff onClick={setToggle} toggle={toggle}/>
+      <OnOff onClick={setToggle} toggle={toggle}/>*/}
     </div>
   );
 }

@@ -9,7 +9,7 @@ type ItemType = {
 type SelectPropsType = {
     onChange: (value: any) => void
     items: ItemType[]
-    value?: string
+    value?: any
 }
 
 export function Select (props: SelectPropsType){
