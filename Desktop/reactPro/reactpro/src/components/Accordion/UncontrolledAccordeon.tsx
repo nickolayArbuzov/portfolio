@@ -7,7 +7,6 @@ type UncontrolledAccordeonPropsType = {
 }
 
 export function UncontrolledAccordeon(props: UncontrolledAccordeonPropsType) {
-  console.log('uncontrolledAcc render')
   let [state, dispatch] = useReducer(reducer, { collapsed: false });
 
   return (
