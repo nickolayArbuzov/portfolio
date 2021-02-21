@@ -8,7 +8,6 @@ type onOffPropsType = {
 }
 
 export function RubicksCube() {
-
   let [x, setx] = useState(0);
   let [y, sety] = useState(0);
   let [z, setz] = useState(0);
@@ -21,8 +20,8 @@ export function RubicksCube() {
     let beginX = e.clientX;
     let beginY = e.clientY;
     e.target.addEventListener('mousemove', (e:any) => {
-        sety((e.clientX - beginX)/1000*360);
-        setx((beginY - e.clientY)/1000*360);
+        sety((e.clientX - beginX));
+        setx((beginY - e.clientY));
     })
   }
 

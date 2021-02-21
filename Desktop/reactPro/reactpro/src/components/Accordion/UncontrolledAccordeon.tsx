@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import s from './Accordeon.module.css';
+import { reducer, TOGGLE_COLLAPSED } from './reducer';
 
 type UncontrolledAccordeonPropsType = {
   title: string,
 }
 
 export function UncontrolledAccordeon(props: UncontrolledAccordeonPropsType) {
-
-  let [collapsed, setCollapsed] = useState(false);
-
-  const onSetCollapsed = () => {
-    setCollapsed(!collapsed);
-  }
+  console.log('uncontrolledAcc render')
+  let [state, dispatch] = useReducer(reducer, { collapsed: false });
 
   return (
     <div>
-      <UncontrolledAccordeonTitle onSetCollapsed={onSetCollapsed} title={props.title}/> 
-      {collapsed && <UncontrolledAccordeonBody />}
+      <UncontrolledAccordeonTitle onSetCollapsed={() => {dispatch({type: TOGGLE_COLLAPSED})}} title={props.title}/> 
+      {!state.collapsed && <UncontrolledAccordeonBody />}
     </div>
   )
 }
@@ -27,6 +24,7 @@ type UncontrolledAccordeonTitlePropsType = {
 }
 
 function UncontrolledAccordeonTitle(props: UncontrolledAccordeonTitlePropsType) {
+  console.log('uncontrolledAccTitle render')
   return (
     <div>
       <h3 className={s.title} onClick={props.onSetCollapsed}>{props.title}</h3>
@@ -35,6 +33,7 @@ function UncontrolledAccordeonTitle(props: UncontrolledAccordeonTitlePropsType) 
 }
 
 function UncontrolledAccordeonBody() {
+  console.log('uncontrolledAccBody render')
   return (
     <div>
       <ul>

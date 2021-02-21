@@ -20,8 +20,8 @@ function App() {
 
   return (
     <div className={s.App}>
-      <RubicksCube />
-      {/*<AppTitle title={'Uncontrolled:'}/>
+      {/*<RubicksCube/>*/}
+      <AppTitle title={'Uncontrolled:'}/>
       <UncontrolledRating />
       <UncontrolledAccordeon title={'my toDos'} />
       <UncontrolledOnOff onChange={setUncontrolledToggle} title={unControlledtoggle.toString()} /> 
@@ -32,8 +32,8 @@ function App() {
               onClick={setFixValue} 
               onMouseEnter={setRatingValue} 
               onMouseLeave={setRatingValue}/>
-      <Accordeon title={'my purchases'} onClick={setCollapsed} collapsed={collapsed}/>
-      <OnOff onClick={setToggle} toggle={toggle}/>*/}
+      {/*<Accordeon title={'my purchases'} onClick={setCollapsed} collapsed={collapsed}/>*/}
+      <OnOff onClick={setToggle} toggle={toggle}/>
     </div>
   );
 }
