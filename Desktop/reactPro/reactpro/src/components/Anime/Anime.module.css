@@ -1,0 +1,32 @@
+
+.ring {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: gray;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    overflow: hidden;
+}
+.wrap {
+    position: absolute;
+    top: -100px;
+    left: -150px;
+    width: 600px;
+    height: 600px;
+}
+.path {
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+    animation: dash 3s linear alternate infinite;
+  }
+  
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 2900;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }

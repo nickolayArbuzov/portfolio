@@ -7,6 +7,7 @@ import { Rating, RatingValueType } from './components/Rating/Rating';
 import { Accordeon } from './components/Accordion/Accordeon';
 import { OnOff } from './components/OnOff/OnOff';
 import { RubicksCube } from './components/RubicksCube/RubicksCube';
+import { Anime } from './components/Anime/Anime';
 
 function App() {
 
@@ -20,8 +21,9 @@ function App() {
 
   return (
     <div className={s.App}>
-      <RubicksCube/>
-      {/*<AppTitle title={'Uncontrolled:'}/>
+      <Anime />
+      {/*<RubicksCube/>
+      <AppTitle title={'Uncontrolled:'}/>
       <UncontrolledRating />
       <UncontrolledAccordeon title={'my toDos'} />
       <UncontrolledOnOff onChange={setUncontrolledToggle} title={unControlledtoggle.toString()} /> 
